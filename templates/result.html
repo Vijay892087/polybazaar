@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your BTEUP Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=30">
+  <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+  <div class="result-container">
+    <div class="header">
+      <h6>Thank you for using our result checking system.<br>We're launching a DOB-free result check before January 2026.<br><br>हमारे परिणाम जांच प्रणाली का उपयोग करने के लिए धन्यवाद।<br>हम जनवरी 2026 से पहले बिना जन्म तिथि के परिणाम देखने की सुविधा शुरू करने जा रहे हैं।</h6>
+    </div>
+
+    <div class="result-content">
+      {{ result_html | safe }}
+    </div>
+
+    <div class="action-buttons">
+      <a href="/">🔁 Check Another</a>
+      <button onclick="window.print()">🖨 Download PDF</button>
+    </div>
+  </div>
+</body>
+</html>

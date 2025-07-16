@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f1f5f9;
+}
+
+.result-container {
+  padding: 1px;
+  max-width: 2000%;
+  margin: 0 auto;
+}
+
+.result-content {
+  background: white;
+  padding: 10px;
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  zoom: 0.85; /* auto shrink for phone */
+}
+
+@media screen and (max-width: 768px) {
+  .result-content {
+    zoom: 0.29; /* Mobile view: shrink it to fit screen */
+  }
+}
+h6{
+fony-size :0.8em;
+ height:150px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 0px;
+  height:auto;
+  width:auto;
+}
+
+.action-buttons {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.action-buttons a,
+.action-buttons button {
+  background: #0d6efd;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 5px;
+}
+.header {
+  font-size: 1.2rem;
+  color: #004080;
+  background: #e6f2ff;
+  padding: 15px 2px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  transition: transform 0.3s ease;
+  margin-bottom: 2px;
+}
+
+.header {
+  transform: scale(1.02);
+  background: #d0eaff;
+}
+
+.action-buttons a:hover,
+.action-buttons button:hover {
+  background: #084ec2;
+}

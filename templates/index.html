@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+  <title>PolyBazaar - BTEUP Result Checker</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  <!-- External CSS -->  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />  <style>
+    /* Inline fallback if CSS fails */
+    .loader {
+      display: none;
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #1e3c72;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 15px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style></head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="title">🎓 Check Your BTEUP Result</h1>
+      <p class="subtitle">Fast • Secure • No Login Needed</p>{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="flash">{{ messages[0] }}</div>
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST" class="form" onsubmit="showLoader()">
+    <input type="text" name="enrollment" placeholder="Enter Enrollment Number" required pattern="E[0-9]{14}" title="Format: E23113735600068" />
+    <input type="text" name="dob" placeholder="Enter DOB (DD/MM/YYYY)" required pattern="\d{2}/\d{2}/\d{4}" title="Format: DD/MM/YYYY" />
+    <button type="submit">🔍 Show Result</button>
+    <div class="loader" id="loader"></div>
+  </form>
+
+  <div class="highlights">
+    <span>✅ Verified Source</span>
+    <span>📱 Mobile Friendly</span>
+    <span>🗂 PDF Print Ready</span>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 <strong>PolyBazaar.in</strong> — Powered by Students for Students</p>
+  </div>
+</div>
+
+  </div>  <script>
+    function showLoader() {
+      document.getElementById('loader').style.display = 'block';
+    }
+  </script></body>
+</html>
