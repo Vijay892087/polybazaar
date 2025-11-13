@@ -26,6 +26,10 @@ def index():
 def admit():
     return render_template('admit.html')
 
+@app.route('/admit2')
+def admit():
+    return render_template('admit2.html')
+
 
 @app.route('/view/<enrollment>')
 def view_result(enrollment):
