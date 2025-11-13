@@ -27,7 +27,7 @@ def admit():
     return render_template('admit.html')
 
 @app.route('/admit2')
-def admit():
+def admit2():
     return render_template('admit2.html')
 
 
