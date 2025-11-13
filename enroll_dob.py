@@ -21,9 +21,16 @@ def index():
             return redirect(url_for('index'))  # redirect back to input form
     return render_template("index.html")
 
+
+@app.route('/admit')
+def admit():
+    return render_template('admit.html')
+
+
 @app.route('/view/<enrollment>')
 def view_result(enrollment):
     return "<h2>This route is no longer used since we don't save raw files.</h2>"
+
 
 def fetch_bteup_result(enrollment, dob):
     session = requests.Session()
@@ -52,8 +59,9 @@ def fetch_bteup_result(enrollment, dob):
 
     # ✅ Replace BTEUP logo with your custom logo
     html = response.text.replace('/images/1.jpg', '/static/images/1.png')
-    
+
     return html
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
