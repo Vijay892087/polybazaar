@@ -38,7 +38,7 @@ def view_result(enrollment):
 
 def fetch_bteup_result(enrollment, dob):
     session = requests.Session()
-    url = "https://result.bteexam.com/even/main/rollno.aspx"
+    url = "https://result.bteexam.com/Odd_Semester/main/"
     res = session.get(url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
 
